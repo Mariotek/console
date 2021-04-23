@@ -66,11 +66,11 @@ var __wpo = {
       "/manifest.json",
       "/vendor/sass/sass.js",
       "/favicon-192.png",
-      "/vendor/stylus.js",
       "/vendor/coffeescript-2.js",
+      "/vendor/stylus.js",
       "/vendor/reason/refmt.js",
-      "/vendor/sass/sass.worker.js",
-      "/vendor/reason/bs.js"
+      "/vendor/reason/bs.js",
+      "/vendor/sass/sass.worker.js"
     ]
   },
   "externals": [
@@ -86,7 +86,7 @@ var __wpo = {
     "9a71aedca9d8c39200024a3741e5de12030a6823": "/boilerplate-vue-jsx.chunk.js",
     "47a52d38999bb8448092c4d7ef98ff3063fa11ac": "/codemirror-mode.chunk.js",
     "c982b0a98ab6b44b18b37654b9efd129a63ec5de": "/babel-stuffs.chunk.js",
-    "2420c58a208c26ca391eb732b530fac67caa311d": "/editor-page.chunk.js",
+    "f4ad740ee341d089177999f7821125abc37b151b": "/editor-page.chunk.js",
     "22e50e58c05210f5baeddc2e5b2252e79d7abf0d": "/codemirror-mode-pug.chunk.js",
     "8298518dc1c6baf00656917d640bb37854224dc6": "/5.chunk.js",
     "2345c144adc7c3277c681d69355c9b3011046b14": "/not-found-page.chunk.js",
@@ -136,18 +136,18 @@ var __wpo = {
     "3f6d2ec9a4205993edd256aa2a9ab12b0d49ec52": "/manifest.json",
     "d304b1490546efddf3c57bc44e937d2b05f642f0": "/vendor/sass/sass.js",
     "1d49e6dfbf2f8d472d0a3c42b43c072953abe0df": "/favicon-192.png",
-    "b4bf329f9ffabd9d1856b63df7fcf588527a3d3d": "/vendor/stylus.js",
     "cf371f4ae613662108da66799da14cfd76155e78": "/vendor/coffeescript-2.js",
+    "b4bf329f9ffabd9d1856b63df7fcf588527a3d3d": "/vendor/stylus.js",
     "8521fb018c3a2fecec3b6e4940fc2a62ee7f65cd": "/vendor/reason/refmt.js",
-    "843777bf57a30c1e29caf7c6e16e2047bd3cef4f": "/vendor/sass/sass.worker.js",
     "a34b5c810dd6e46ba070d1e33c6daa4c70730cc5": "/vendor/reason/bs.js",
+    "843777bf57a30c1e29caf7c6e16e2047bd3cef4f": "/vendor/sass/sass.worker.js",
     "8546929d066997e3f7341e1569c917964ba5ce2c": "/"
   },
   "navigateFallbackURL": "/",
   "navigateFallbackForRedirects": true,
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "05aab5b95f7933949f9d79f977626189ec7b11e4",
+  "version": "4c63a502c6c6e4c184d81b8bbb29208f234c0ac5",
   "name": "webpack-offline",
   "pluginVersion": "4.9.0",
   "relativePaths": false
