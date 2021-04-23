@@ -34,9 +34,9 @@
       <output-pan class="pan" v-show="isVisible('output')" />
     </div>
 
-<!--    <div ref="codefund">-->
-<!--      <div class="codefund-placeholder">Loading CodeFund...</div>-->
-<!--    </div>-->
+    <div ref="sponsor" class="sponsor">
+      <a href="https://github.com/sponsors/egoist" target="_blank" rel="noopener nofollow">❤️ Sponsor me on GitHub to support the rewrite of CodePan!</a>
+    </div>
   </div>
 </template>
 
@@ -45,7 +45,6 @@ import progress from 'nprogress'
 import { mapState, mapActions } from 'vuex'
 import notie from 'notie'
 import isElectron from 'is-electron'
-import axios from 'axios'
 import { inIframe } from '@/utils'
 import Event from '@/utils/event'
 import HomeHeader from '@/components/HomeHeader.vue'
@@ -105,8 +104,6 @@ export default {
     next(async vm => {
       await handleRouteChange(to, vm)
     })
-
-
   },
   async beforeRouteUpdate(to, from, next) {
     console.log('route updated to', to)
@@ -155,11 +152,9 @@ export default {
     Event.$on('show-compiled-code', type => {
       this.showCompiledCode[type] = true
     })
-
-    this.checkSnippet();
   },
   methods: {
-    ...mapActions(['setBoilerplate', 'setGist', 'showPans', 'setAutoRun','updateCode']),
+    ...mapActions(['setBoilerplate', 'setGist', 'showPans', 'setAutoRun']),
     isVisible(pan) {
       return this.visiblePans.indexOf(pan) !== -1
     },
@@ -179,20 +174,6 @@ export default {
             text: 'Successfully logged in with GitHub!'
           })
         }
-      }
-    },
-    async checkSnippet() {
-      const _PATH_HASH = window.location.hash;
-      let sitePrefix = 'http://localhost:4000/codes/';
-      if (process.env.NODE_ENV === 'production') {
-        sitePrefix = 'http://mariotek.ir/console/code/';
-      }
-
-      if(_PATH_HASH.length > 0) {
-        const CodePath = _PATH_HASH.substr(1, 2) + '/' + _PATH_HASH.substr(3, 2)
-        const res = await axios.get(sitePrefix + CodePath + '.txt')
-        this.updateCode({type: 'js', code: res.data});
-        Event.$emit('refresh-editor')
       }
     }
   },
@@ -220,7 +201,7 @@ export default {
 
 <style lang="stylus" scoped>
 .pans
-  height: calc(100% - 40px)
+  height: calc(100% - 40px - 40px)
   display: flex
   position: relative
 
@@ -275,10 +256,14 @@ export default {
   z-index: 9999 !important
   padding: 0 10px !important
 
-.codefund-placeholder
+.sponsor
   height: 40px
   line-height 40px
   border-top: 1px solid #ccc
   text-align: center
   padding: 0 10px
+  a
+    text-decoration: none
+    &:hover
+      text-decoration: underline
 </style>
